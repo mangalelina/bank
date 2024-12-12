@@ -1,0 +1,13 @@
+#Login/Logout tests
+login test0 123456 231.43.171.61
+login test1 000000 111.66.191.1
+login test1 123456 111.66.191.1
+login test1 123456 121.66.191.1
+login test1 123456 111.66.191.1
+login test2 937204 31.73.1.1
+login test3 193720 33.73.1.1
+out test2 31.73.1.1
+out test4 231.43.171.61
+out test3 13.73.1.1
+out user1 231.43.171.61
+$$$

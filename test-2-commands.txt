@@ -1,0 +1,31 @@
+login userA 123456 1.1.1.1
+login userB 937204 17.8.9.92
+login userC 193720 1.1.1.1
+login userC 193720 1.1.1.1
+login userD 456789 2.2.2.2
+login userE 927402 3.3.3.3
+login userF 502650 2.2.2.2
+login userG 018372 17.1.23.3
+out userG 17.1.23.3
+#exec date = placement date
+place 01:02:03:04:05:06 1.1.1.1 userA userC 1000 01:02:03:04:05:06 s
+#exec date is more than 3 days away from placement date 
+place 02:03:04:05:06:07 1.1.1.1 userA userB 2010 03:03:04:05:06:07 o
+place 02:03:04:05:06:07 1.1.1.1 userA userB 2010 02:03:04:08:00:00 o
+#valid 
+place 03:04:05:06:07:08 1.1.1.1 userA userB 2010 03:04:05:08:99:99 o
+#user does not exist 
+place 04:05:06:07:08:09 1:1:1:1 user userC 200 04:05:06:07:08:10 s
+place 04:05:06:07:08:09 1:1:1:1 userC userM 200 04:05:06:07:08:10 s
+#execDate < regDate of recipient
+place 05:06:07:06:09:10 3.3.3.3 userE userD 200 05:06:07:08:09:10 o
+#execDate < regDate of sender !!!
+place 22:22:22:22:22:22 2.2.2.2 userD userE 200 22:22:22:24:99:99 o
+#sender isn't active
+place 22:22:22:22:22:22 17.1.23.3 userG userB 200 22:22:22:22:99:99 o
+place 22:22:22:22:22:22 1.1.1.1 userH userB 200 22:22:22:22:99:99 o
+#fraudulent 
+place 22:22:22:22:22:22 1.1.1.2 userA userB 200 22:22:22:22:99:99 o
+$$$
+
+
